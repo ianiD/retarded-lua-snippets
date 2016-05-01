@@ -2,8 +2,8 @@
 
 A collection of short Lua snippets I find myself rewriting a thousand times.
 Currently contains
- * try-catch
- * switch-case
- * a state manager
- * a function extender (glue)
- * ahother function extender (sticky)
+ * [try-catch](try.lua)
+ * [switch-case](switch.lua)
+ * [a state manager](state.lua)
+ * [a function extender (glue)](glue.lua)
+ * [ahother function extender (sticky)](sticky.lua)
