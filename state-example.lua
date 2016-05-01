@@ -8,7 +8,7 @@ State manager example - main
 --]]
 
 local state = require("state")
-state.pathPrefix = "example-states/"
+state.namePrefix = "example-states/"
 
 state:add("splash"):add("menu"):add("play"):set("splash")
 

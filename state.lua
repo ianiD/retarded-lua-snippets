@@ -13,11 +13,12 @@ state.currentState = ""
 
 local function checkName(name) if type(name) ~= "string" then self:errorHandler("Cannot have a non-string state name ("..tostring(name)..")") end end
 
-state.pathPrefix = "states/"
+state.namePrefix = "states/"
+state.nameSuffix = ".lua"
 
 function state:add(name)
 	checkName(name)
-	self.states[name] = dofile(state.pathPrefix..name..".lua")
+	self.states[name] = dofile(state.namePrefix..name..state.nameSuffix)
 
 	return self
 end
