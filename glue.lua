@@ -3,7 +3,7 @@
 Dragomir Ioan/mahham/ianiD
 2016-05-01
 
-Lua function expander thing
+Glorious Lua Utility Extender
 
 	What I don't like about this one is that you must do
 	```lua
