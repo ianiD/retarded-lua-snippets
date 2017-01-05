@@ -1,3 +1,12 @@
+--[[
+
+Dragomir Ioan/mahham/ianiD
+2017-01-05
+
+Type enforcer
+
+--]]
+
 local get, set, typesafe, metatable
 
 get = function(_g, i)
