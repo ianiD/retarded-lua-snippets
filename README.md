@@ -7,3 +7,4 @@ Currently contains
  * [a state manager](state.lua)
  * [a function extender (glue)](glue.lua)
  * [ahother function extender (sticky)](sticky.lua)
+ * [type enforcer](typesafe.lua)
