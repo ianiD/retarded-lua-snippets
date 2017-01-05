@@ -25,16 +25,18 @@ end
 
 function state:set(name, params)
 	checkName(name)
-	if self.currentState ~= "" then
+	if self.currentState ~= "" then	-- if not entering the first state of the ???session???
 		if type(self.states[self.currentState].leave) == "function" then
 			self.states[self.currentState].leave(name)
 		end
 	end
-	self.currentState = name
-	if type(self.states[self.currentState].enter) == "function" then
-		self.states[self.currentState].enter(params)
+	if self.states[name] ~= nil then
+		self.currentState = name
+		if type(self.states[self.currentState].enter) == "function" then
+			self.states[self.currentState].enter(params)
+		end
 	end
-
+	
 	return self
 end
 
@@ -53,11 +55,7 @@ function state:update(...)
 	local ok, err, params = pcall(self.states[self.currentState].update, ...)
 	if ok then
 		if err then
-			if err == "<QUIT>" then
-				love.event.push("quit")
-			else
-				self:set(err, params)
-			end
+			self:set(err, params)
 		end
 	else
 		self:errorHandler(err)

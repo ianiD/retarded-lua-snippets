@@ -21,7 +21,7 @@ end
 function menu.update(dt)
 	time  = time + dt
 	if shouldQuit then
-		return "<QUIT>"
+		love.event.push("quit")
 	elseif shouldPlay then
 		return "play"
 	elseif shouldRestart>0 and time-shouldRestart>1 then
